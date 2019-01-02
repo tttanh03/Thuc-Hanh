@@ -1,0 +1,9 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    app-table {
+        width: 43%;
+        margin: 0.5rem;
+    }
+}

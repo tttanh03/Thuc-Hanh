@@ -1,0 +1,6 @@
+<div class="menu-bar">
+  <div class="menu-item" *ngFor="let menu of menus" (click)="onTapMenu(menu)">
+    <img *ngIf="!menu.active" src="assets/{{menu.icon}}" alt="">
+    <img *ngIf="menu.active" src="assets/{{menu.iconActive}}" alt="">
+  </div>
+</div>

@@ -1,0 +1,71 @@
+
+.table {
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.141) 3px 3px 3px 3px;
+    padding: 1rem;
+    // max-width: 250px;
+    .header {
+        display: flex; 
+        justify-content: space-between;
+        align-items: baseline;
+        font-size:13px;
+    }
+    
+    .body {
+        
+        text-align: center;
+        font-size:13px;
+        button {
+            margin: 1rem 0;
+            padding: 0.5rem 2rem;
+            background: #422912;
+            color: white;
+            border-radius: 2rem;
+            font-size:13px; 
+            
+            
+        }
+    }
+}
+.table-on-serve {
+    background-color: #775333;
+    color:white;
+}
+.header-on-serve {
+    border-block-end: white 0.5px solid;
+
+}
+.customer-name-on-serve {
+    background-color: #422912;
+    border-radius: 2rem;
+    padding: 0.5rem 0.8rem;
+    font-size: 11px;
+    margin-bottom: 0.5rem;
+}
+.body-on-serve {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size:11px;
+    button {
+        display:inline-block;
+        background-color: white;
+        color: orange;
+        font-size:9px;
+        margin: 0.4rem 0rem;
+        padding: 0.5rem 0.7rem;
+        border-width: 0px!important;
+        border-style: none!important;
+
+    }
+    .ready {
+        background-color: yellow;
+        color: #422912;
+    }
+    .served {
+        background-color: rgba(255, 255, 255, 0.363);
+        color: #775333;
+    }
+}

@@ -1,0 +1,16 @@
+.custom-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    span {
+        padding-left:1rem;
+    }
+        button {
+        background-color: transparent;
+        border-style:none;
+        padding: 7px;
+            img {
+            margin: 0.5rem;
+            }
+    }
+}
