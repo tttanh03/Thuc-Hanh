@@ -9,6 +9,7 @@ import { StatusPipe } from './pipes/status.pipe';
 import { FoodComponent } from './food/food.component';
 import { GridTableComponent } from './grid-table/grid-table.component';
 import { ListTableComponent } from './list-table/list-table.component';
+import { TableService } from './services/table.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,9 @@ import { ListTableComponent } from './list-table/list-table.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    TableService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,6 @@
 import { Component, OnInit, OnChanges, OnDestroy, Input } from '@angular/core';
 import { ITable } from './interfaces/ITable';
+import { TableService } from './services/table.service';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +9,17 @@ import { ITable } from './interfaces/ITable';
 })
 export class AppComponent implements OnInit, OnChanges, OnDestroy {
   title = 'angulark08';
-tables:Array<ITable>;
-  ngOnInit() {
+tables:Array<ITable> =[];
+constructor (private tableSvc: TableService) {
 
-  }
+}
+  ngOnInit() {
+    this.tables = this.tableSvc.tables;
+
+
+
+
+}
 
   ngOnChanges() {
     // Se vao day khi thuoc tinh cua component thay doi 
@@ -32,6 +40,7 @@ tables:Array<ITable>;
       tableStatus: 0
     })
   }
+  
   @Input() displayMode:number=0;
   onDisplayModeChange(mode: number): void {
     this.displayMode = mode;
