@@ -15,10 +15,6 @@ constructor (private tableSvc: TableService) {
 }
   ngOnInit() {
     this.tables = this.tableSvc.tables;
-
-
-
-
 }
 
   ngOnChanges() {
