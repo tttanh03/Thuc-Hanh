@@ -9,13 +9,14 @@ import { TableService } from './services/table.service';
 })
 export class AppComponent implements OnInit, OnChanges, OnDestroy {
   title = 'angulark08';
-tables:Array<ITable> =[];
-constructor (private tableSvc: TableService) {
+  tables: Array<ITable> = [];
+  displayMode: number = 0;
+  constructor(private tableSvc: TableService) {
 
-}
+  }
   ngOnInit() {
-    this.tables = this.tableSvc.tables;
-}
+  //  this.tables = this.tableSvc.tables;
+  }
 
   ngOnChanges() {
     // Se vao day khi thuoc tinh cua component thay doi 
@@ -28,17 +29,16 @@ constructor (private tableSvc: TableService) {
 
   check() {
     alert(this.title);
-  
   }
+  
   addTable() {
     this.tables.push({
       tableName: 'New Table',
       tableStatus: 0
     })
   }
-  
-  @Input() displayMode:number=0;
+
   onDisplayModeChange(mode: number): void {
     this.displayMode = mode;
-}
+  }
 }

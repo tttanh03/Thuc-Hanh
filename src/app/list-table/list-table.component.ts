@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ITable } from '../interfaces/ITable';
 import { TableService } from '../services/table.service';
 
@@ -9,10 +9,14 @@ import { TableService } from '../services/table.service';
 })
 export class ListTableComponent implements OnInit {
   tables: Array<ITable> = [];
-constructor (private tableSvc: TableService) {
+  @Input() displayMode = 0;
+  constructor(private tableSvc: TableService) {
+  }
+  ngOnInit() {
+    this.tableSvc.tables.subscribe((newTables) => {
+      this.tables = newTables;
 
-}
-ngOnInit() {
-  this.tables = this.tableSvc.tables;
-}
+    });
+    this.tableSvc.getTables()
+  }
 }

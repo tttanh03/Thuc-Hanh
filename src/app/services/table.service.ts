@@ -1,59 +1,52 @@
 import { Injectable } from '@angular/core';
 import { ITable } from '../interfaces/ITable';
+import {HttpClient} from '@angular/common/http';
+import { Observable, Observer, BehaviorSubject, pipe } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class TableService {
-    tables: ITable[] = [
-        {
-        tableName: 'TAB.01',
-        tableStatus: 0
-      },
-      {
-        tableName: 'TAB.02',
-        tableStatus: 1,
-        customerName: 'Mr.An',
-        totalOrder: 3
-      },
-      {
-        tableName: 'TAB.03',
-        tableStatus: 0
-      },
-      {
-        tableName: 'TAB.04',
-        tableStatus: 2,
-        customerName: 'Ms.Nhi',
-        totalOrder: 2
-      },
-      {
-        tableName: 'TAB.05',
-        tableStatus: 3,
-        customerName: 'Mr.Loc',
-        totalOrder: 3
-      },
-      {
-        tableName: 'TAB.06',
-        tableStatus: 0
-      },
-      {
-        tableName: 'TAB.07',
-        tableStatus: 0
-      },
-      {
-        tableName: 'TAB.08',
-        tableStatus: 1,
-        customerName: 'Mr.Dung',
-        totalOrder: 2
-        
-      } 
-      
-    ];
+  private _tables: BehaviorSubject<ITable[]> = new BehaviorSubject([]);
+  private _currentTable: BehaviorSubject<String> = new BehaviorSubject<String>('');
 
-    addTable() {
-        this.tables.push({
-          tableName: 'New Table',
-          tableStatus: 0
-        })
-    
-}
+  get currentTable() {
+    return this._currentTable.asObservable();
 
+  }
+  get tables() {
+    return this._tables.asObservable();
+  }
+
+  constructor(private httpClient: HttpClient) {
+  }
+ 
+  addTable() {
+    // this.tables.push({
+    //   tableName: 'New Table',
+    //   tableStatus: 0
+    // })
+  }
+
+  getTables() {
+    const url = `http://lexuanquynh.com:8080/tables?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViZTU0ZmEwMzY3OWFjZmY2NTQ1ZmQ0YSIsImlhdCI6MTU0MTc1NDc4NH0.kpj_nqM8aiT7OpjTmheRfYE8IRY0z4xSE-CP7GGWbHM`
+    this.httpClient.get(url).pipe(
+      map((response: any) => {
+      const data = response.map(x => {
+        let table: ITable = {
+          tableName: x.name,
+          customerName: x.bill ? x.bill.customer : undefined,
+          tableStatus: x.bill ? x.bill.status : 0,
+          totalOrder: x.bill ? x.bill.details.length : undefined
+        }
+        return table;
+      })
+      return data;
+    }))
+      .subscribe((data: any[]) => {
+        this._tables.next(data)
+
+    })
+
+    // this.tables = data;
+  }
 }

@@ -7,9 +7,9 @@ import { HeaderComponent } from './header/header.component';
 import { MenuBarComponent } from './menu-bar/menu-bar.component';
 import { StatusPipe } from './pipes/status.pipe';
 import { FoodComponent } from './food/food.component';
-import { GridTableComponent } from './grid-table/grid-table.component';
 import { ListTableComponent } from './list-table/list-table.component';
 import { TableService } from './services/table.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,12 +19,12 @@ import { TableService } from './services/table.service';
     MenuBarComponent,
     StatusPipe,
     FoodComponent,
-    GridTableComponent,
     ListTableComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     TableService
