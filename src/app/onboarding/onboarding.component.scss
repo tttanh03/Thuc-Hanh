@@ -1,0 +1,46 @@
+
+img {
+    height: 30%;
+    width: 120%;
+    object-fit: contain;
+    margin-left: -40px;
+    margin-top:-120px;
+}
+.content {
+    margin: auto;
+    padding: 5em 3em 0 3em;
+    text-align: center;
+h4 {
+    font-size:21px;
+
+}
+p{
+    font-size: 14px;
+}
+button {
+    width: 70%;
+    margin: 6rem 0 0 0;
+    padding: 1rem 2rem;
+    background: #422912;
+    color: white;
+    border-radius: 2rem;
+    font-size: 17px;
+    
+  }
+}
+@media (min-width:486px) {
+    
+    img {
+     
+        margin-top:-140px;
+    
+        width:500px;
+        height: auto;
+
+    }
+    .center-img {
+        margin-right: auto;
+        display: block;
+        margin-left:auto;
+    }
+}

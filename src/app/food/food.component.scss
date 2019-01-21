@@ -2,20 +2,22 @@ $margin:unset;
 
 .food {
     height:170px;
-    width: 360px;
+    width: 370px;
     display: -webkit-flex;
     display: flex;
     padding: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     font-family: 'Roboto', sans-serif;
     color: rgb(77, 32, 32);
+    background-color: white;
+    margin-bottom: 15px;
     
 }
 img {
-    width: 48%;
+    width: 45%;
     height: auto;
-    object-fit: cover;
-    padding-right: 3px;
+    object-fit: contain;
+    padding: 3px;
 }
 .caption {
     text-align: center;
@@ -34,7 +36,7 @@ h5 {
     
 }
 p {
-    font-size: 9.5px;
+    font-size: 9px;
     margin:$margin;
     margin-top: 7px;
     
@@ -46,9 +48,22 @@ p {
     text-align: center;
     color: white; 
     font-size: 12px;
-    margin-top: 25px;
+    margin-top: 15px;
     padding: 5px 20px 5px 20px;
     border-width:0px;
     
 }
+@media (min-width: 800px) {
+    
+    .food {
+        width: 95%;
+        display:flex;
+        justify-content: space-evenly;
+    }
+    img {
+        width:300px;
+        height: 170px;
+        object-fit: contain;
 
+    }
+}

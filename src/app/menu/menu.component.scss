@@ -1,0 +1,26 @@
+.categories-buttons {
+  margin: 15px 5px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  button {
+    width: 22%;
+    height: 85px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: white;
+    font-size: 9.5px;
+  
+
+
+
+
+  }
+}
+app-food {
+  display: flex;
+  justify-content: space-around;
+}

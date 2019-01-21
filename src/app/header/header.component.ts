@@ -7,19 +7,23 @@ import { TableService } from '../services/table.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  title: string = 'Table';
-  
-  
-@Output() onAdd:EventEmitter<Boolean> = new EventEmitter ()
+  title: String = 'MENU';
+
+
+  @Output() onAdd: EventEmitter<Boolean> = new EventEmitter()
 
   constructor(private tableSvc: TableService) {
 
   }
 
   ngOnInit() {
+    this.tableSvc.currentTable.subscribe(newTitle => {
+      this.title = newTitle;
+      this.title = newTitle || 'Table'
+    })
   }
-add() {
-  //this.onAdd.emit(true)
-  this.tableSvc.addTable();
-}
+  add() {
+    //this.onAdd.emit(true)
+    this.tableSvc.addTable();
+  }
 }

@@ -1,0 +1,73 @@
+.login {
+  padding: 80px 55px 0px 55px;
+
+  .title {
+    text-align: center;
+    margin-bottom: 55px;
+
+    img {
+
+      width: 100px;
+      height: 100px;
+
+    }
+
+    h1 {
+      font-size: 22px;
+      font-weight: bold;
+      margin-top: 10px;
+      letter-spacing: 3px;
+    }
+
+    p {
+      font-size: 13px;
+      color: rgb(165, 165, 165);
+      margin-top: -5px;
+    }
+  }
+
+  h6 {
+    font-size: 12px;
+    font-weight: bolder;
+    letter-spacing: 4px;
+
+  }
+
+  .password {
+    margin-top: 30px;
+  }
+
+  input {
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid rgb(184, 184, 184);
+    color:rgb(165, 165, 165);
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
+    padding-right: 10px;
+    padding-bottom: 8px;
+  }
+
+  input[type=text] {
+
+    background-image: url('../../assets/user-login.png');
+  }
+
+  input[type=password] {
+
+    background-image: url('../../assets/key-512.png');
+  }
+
+  button {
+    width: 100%;
+    margin: 8rem 0 0 0;
+    padding: 1rem 2rem;
+    background: #422912;
+    color: white;
+    border-radius: 2rem;
+    font-size: 17px;
+    
+  }
+
+}
