@@ -4,17 +4,37 @@
     <h1 class="text-center">Welcome to CONO</h1>
     <P>helping you to order coffee</P>
   </div>
-  <form>
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
     <div class="form-group">
-      <h6>USERNAME</h6>
-      <input type="text" class="form-control" [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
+      <h6>EMAIL</h6>
+      <input type="email" name="username" id="username" [formControl]="username">
+      <div class="invalid" [hidden]="username.valid || username.untouched">
+        <div [hidden]="!username.hasError ('email')">
+          Email is invalid
+        </div>
+        <div [hidden]="!username.hasError('required')">
+          Email is required
+        </div>
+      </div>
+      
     </div>
     <div class="form-group">
       <h6 class="password" >PASSWORD</h6>
-      <input type="password" class="form-control" [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
+      <input type="password" name="password" id="password" [formControl]="password">
+      <div class="invalid" [hidden]="password.valid || password.untouched">
+        <div [hidden]="!password.hasError ('minlength')">
+          Password has more than 8 characters 
+        </div>
+        <div [hidden]="!password.hasError ('maxlength')">
+          Password has less than 32 characters 
+        </div>
+        <div [hidden]="!password.hasError('required')">
+          Password is required
+        </div>
+      </div>
     </div>
     <div class="form-group text-center">
-      <button class="btn btn-primary" (click)="login()">LOG IN</button>
+      <button class="btn btn-primary" type="submit" [disabled]="loginForm.invalid">LOG IN</button>
     </div>
   </form>
 </div>

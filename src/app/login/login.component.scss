@@ -38,6 +38,7 @@
   }
 
   input {
+    width: 100%;
     box-sizing: border-box;
     border: none;
     border-bottom: 1px solid rgb(184, 184, 184);
@@ -49,7 +50,7 @@
     padding-bottom: 8px;
   }
 
-  input[type=text] {
+  input[type=email] {
 
     background-image: url('../../assets/user-login.png');
   }
@@ -68,6 +69,10 @@
     border-radius: 2rem;
     font-size: 17px;
     
+  }
+  .invalid {
+    font-size:11px;
+    color:red;
   }
 
 }

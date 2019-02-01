@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { AppComponent } from './app.component';
 import { TableComponent } from './table/table.component';
 import { HeaderComponent } from './header/header.component';
@@ -23,6 +23,10 @@ import { LoginComponent } from './login/login.component';
 import { LayoutComponent } from './layout/layout.component';
 import { AuthService } from './services/auth.service';
 import { OnboardingComponent } from './onboarding/onboarding.component';
+import { LoginGuard } from './services/login-guard.service';
+import { AuthGuard } from './services/auth-guard.service';
+import { InfoComponent } from './info/info.component';
+import { ScheduleComponent } from './schedule/schedule.component';
 
 @NgModule({
   declarations: [
@@ -42,11 +46,14 @@ import { OnboardingComponent } from './onboarding/onboarding.component';
     FoodDetailsComponent,
     LoginComponent,
     LayoutComponent,
-    OnboardingComponent
+    OnboardingComponent,
+    InfoComponent,
+    ScheduleComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot([
       {
@@ -55,14 +62,16 @@ import { OnboardingComponent } from './onboarding/onboarding.component';
       },
       {
         path: 'login',
+        //canActivate: [LoginGuard],
         component: LoginComponent
       },
       {
         path: '',
+        //canActivate: [AuthGuard],
         component: LayoutComponent,
         children: [
           {
-            path: '',
+            path: 'tables',
             component: ListTableComponent
           },
           {
@@ -75,17 +84,14 @@ import { OnboardingComponent } from './onboarding/onboarding.component';
             component: ProfileComponent,
             children: [
               {
-                path: 'menu1',
-                component: Demo1Component
+                path: 'info',
+                component: InfoComponent
               },
               {
-                path: 'menu2',
-                component: Demo2Component
-              },
-              {
-                path: 'menu3',
-                component: Demo3Component
+                path: 'schedule',
+                component: ScheduleComponent
               }
+              
             ]
 
 

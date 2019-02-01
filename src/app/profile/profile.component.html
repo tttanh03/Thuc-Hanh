@@ -1,7 +1,32 @@
-<h2>Profile</h2>
-<ul>
-  <li routerLink="menu1">Menu 1</li>
-  <li routerLink="menu2">Menu 2</li>
-  <li routerLink="menu3">Menu 3</li>
-</ul>
-<router-outlet></router-outlet>
+<div class="top">
+  <div class="background">
+    <div class="header">
+      <img src="../../assets/lxquynh.jpeg">
+      <h4>Lê Xuân Quỳnh</h4>
+      <p>Nhân viên bán hàng</p>
+    </div>
+  </div>
+</div>
+
+<div class="bottom">
+
+  <div class="inside">
+
+    <div class="navigate">
+
+      <button class="button-info"routerLink="info" [ngClass]="{'active': selectedItem === 'item1'}" (click)="selectedItem = 'item1'">
+        Thông tin
+      </button>
+
+      <button class="button-schedule"routerLink="schedule" [ngClass]="{'active': selectedItem === 'item2'}" (click)="selectedItem = 'item2'">
+        Ca làm việc
+      </button>
+    </div>
+
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+
+  </div>
+
+</div>

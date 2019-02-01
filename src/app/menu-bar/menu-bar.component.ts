@@ -27,10 +27,10 @@ export class MenuBarComponent implements OnInit {
       this.router.navigate(['/menu'])
     }
     if (menu.name === 'Order') {
-      this.router.navigate(['/'])
+      this.router.navigate(['/tables'])
     }
     if (menu.name === 'User') {
-      this.router.navigate(['/profile'])
+      this.router.navigate(['/profile/info'])
     }
   }
 }
