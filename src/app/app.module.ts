@@ -76,8 +76,13 @@ import { ScheduleComponent } from './schedule/schedule.component';
           },
           {
             path: 'menu',
-            component: MenuComponent
-            
+            component: MenuComponent,
+            children: [
+              {
+                path: 'detail',
+                component: FoodDetailsComponent
+              }
+            ]
           },
           {
             path: 'profile',
@@ -91,24 +96,14 @@ import { ScheduleComponent } from './schedule/schedule.component';
                 path: 'schedule',
                 component: ScheduleComponent
               }
-              
             ]
-
-
-          },
-          {
-            path: 'detail',
-            component: FoodDetailsComponent
-          },
-          {
-            path: '**',
-            component: PageNotFoundComponent
           }
-
-
         ]
+      },
+      {
+        path: '**',
+        component: PageNotFoundComponent
       }
-
     ])
   ],
   providers: [

@@ -1,9 +1,9 @@
 <div class="top">
   <div class="background">
     <div class="header">
-      <img src="../../assets/lxquynh.jpeg">
-      <h4>Lê Xuân Quỳnh</h4>
-      <p>Nhân viên bán hàng</p>
+      <img src="{{profile.picture}}">
+      <h4>{{profile.name}}</h4>
+      <p>{{profile.position}}</p>
     </div>
   </div>
 </div>
@@ -14,11 +14,11 @@
 
     <div class="navigate">
 
-      <button class="button-info"routerLink="info" [ngClass]="{'active': selectedItem === 'item1'}" (click)="selectedItem = 'item1'">
+      <button class="button-info"routerLink="info" [ngClass]="{'active': selectedItem === 'info'}" (click)="selectedItem = 'info'">
         Thông tin
       </button>
 
-      <button class="button-schedule"routerLink="schedule" [ngClass]="{'active': selectedItem === 'item2'}" (click)="selectedItem = 'item2'">
+      <button class="button-schedule"routerLink="schedule" [ngClass]="{'active': selectedItem === 'schedule'}" (click)="selectedItem = 'schedule'">
         Ca làm việc
       </button>
     </div>
