@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ITable } from '../interfaces/ITable';
+import { ITable } from '../page/table/interfaces/ITable';
 
 @Component({
   selector: 'app-layout',

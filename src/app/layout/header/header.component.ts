@@ -1,5 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { TableService } from '../services/table.service';
+import { TableService } from 'src/app/page/table/services/table.service';
 
 @Component({
   selector: 'app-header',
