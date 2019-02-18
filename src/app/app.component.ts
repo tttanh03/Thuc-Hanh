@@ -11,7 +11,7 @@ import { MenuService } from './page/menu/services/menu.service';
 })
 export class AppComponent implements OnInit,OnChanges,OnDestroy {
   
-  constructor(private menuSvc: MenuService){
+  constructor(){
 
   }
   ngOnInit() {
