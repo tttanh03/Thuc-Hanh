@@ -2,12 +2,12 @@ import {Component, OnDestroy, Input} from '@angular/core'
 import { IFood } from '../interfaces/IFood';
 
 @Component ({
-    selector: 'app-food',
-    templateUrl: './food.component.html',
-    styleUrls: ['food.component.scss']
+    selector: 'app-order-food',
+    templateUrl: './order-food.component.html',
+    styleUrls: ['order-food.component.scss']
 })    
 
-export class FoodComponent implements OnDestroy{
+export class OrderFoodComponent implements OnDestroy{
     @Input() food: IFood = {
         id: '',
         name: 'Coffee',

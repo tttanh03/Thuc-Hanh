@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { OnboardingComponent } from './onboarding.component';
+import { OnboardingRoutingModule } from './onboarding.routing';
 
 
 @NgModule({
-    imports: [],
+    imports: [
+        OnboardingRoutingModule
+    ],
     exports: [],
     declarations: [OnboardingComponent],
     providers: [],

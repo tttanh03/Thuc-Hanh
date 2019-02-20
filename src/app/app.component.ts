@@ -1,8 +1,4 @@
 import { Component, OnInit, OnChanges, OnDestroy, Input } from '@angular/core';
-//import { ITable } from './interfaces/ITable';
-//import { TableService } from './services/table.service';
-
-import { MenuService } from './page/menu/services/menu.service';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +7,7 @@ import { MenuService } from './page/menu/services/menu.service';
 })
 export class AppComponent implements OnInit,OnChanges,OnDestroy {
   
-  constructor(private menuSvc: MenuService){
+  constructor(){
 
   }
   ngOnInit() {

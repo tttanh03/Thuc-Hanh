@@ -4,7 +4,9 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, Observer, BehaviorSubject, pipe } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-@Injectable()
+@Injectable(
+  {providedIn: 'root'}
+)
 export class TableService {
   private _tables: BehaviorSubject<ITable[]> = new BehaviorSubject([]);
   private _currentTable: BehaviorSubject<String> = new BehaviorSubject<String>('');

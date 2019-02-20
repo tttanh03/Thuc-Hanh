@@ -1,0 +1,24 @@
+<div class="top">
+
+  <div class="table">
+    <h4 class="text">Table 01</h4>
+    <div class="line"></div>
+
+
+  </div>
+
+  <div class="customer">
+    <p class="text">Customer's Name</p>
+    <div class="rectangle">
+      <h6 class="text">Mr.Quynh</h6>
+    </div>
+
+  </div>
+</div>
+<div class="categories-buttons"> 
+    <button> <img src="../assets/category-1.png">Coffee</button>
+    <button> <img src="../assets/category-2.png">Tea</button>
+    <button> <img src="../assets/category-3.png">Dessert</button>
+    <button> <img src="../assets/category-4.png">Special</button>
+</div>
+<app-order-food *ngFor="let food of foods" [food]="food"> </app-order-food>

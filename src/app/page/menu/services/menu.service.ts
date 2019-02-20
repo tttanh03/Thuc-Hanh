@@ -4,7 +4,7 @@ import { Observable, Observer, BehaviorSubject, pipe } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { IFood } from '../interfaces/IFood';
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class MenuService {
     private _foods: BehaviorSubject<IFood[]> = new BehaviorSubject([]);
     private _currentMenu: BehaviorSubject<String> = new BehaviorSubject<String>('');
@@ -30,6 +30,7 @@ export class MenuService {
 
                     id: x.id,
                     name: x.name,
+                    price: x.price,
                     cover: x.pictures ? x.pictures[0] : '',
                     categories: x.categories ? x.categories.map(i => {
                         return {
