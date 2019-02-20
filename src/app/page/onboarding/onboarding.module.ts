@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { OnboardingComponent } from './onboarding.component';
-import { OnBoardingRoutingModule } from './onboarding.routing';
+import { OnboardingRoutingModule } from './onboarding.routing';
 
 
 @NgModule({
     imports: [
-        OnBoardingRoutingModule
+        OnboardingRoutingModule
     ],
     exports: [],
     declarations: [OnboardingComponent],

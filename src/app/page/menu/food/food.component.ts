@@ -11,6 +11,7 @@ export class FoodComponent implements OnDestroy{
     @Input() food: IFood = {
         id: '',
         name: 'Coffee',
+        price: 1,
         cover: '',
         categories: [{
             id:'',

@@ -1,0 +1,14 @@
+<div class="food">
+        <img src="{{food.cover}}">
+        <div class="caption">
+            <h2>{{food.name}}</h2>
+            <h5>{{food.price}} vnd</h5>
+            <div class="input">
+                <button (click)="addOrder(food)">+</button>
+                <input type="text" [(ngModel)]="orderNumber">
+                <button (click)="removeOrder(food)">-</button>
+            </div>
+            
+        </div>
+    </div> 
+    

@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { OnboardingComponent } from './page/onboarding/onboarding.component';
-import { LoginComponent } from './page/auth/login/login.component';
 import { LayoutComponent } from './layout/layout.component';
 import { PageNotFoundComponent } from './layout/page-not-found/page-not-found.component';
 import { LoginGuard } from './services/login-guard.service';
 import { AuthGuard } from './services/auth-guard.service';
+<<<<<<< HEAD
+=======
+
+>>>>>>> 25f351cf77b915fa2f4b1c9006ed6b8e52c6e205
 
 const routes: Routes = [
   {
@@ -37,9 +39,14 @@ const routes: Routes = [
     ]
   },
   {
+    path: 'order',
+    loadChildren: './order/order.module#OrderModule'
+  },
+  {
     path: '**',
     component: PageNotFoundComponent
   }
+
 ]
 
 @NgModule({

@@ -4,7 +4,12 @@ import { tap } from 'rxjs/operators';
 
 @Injectable({
     providedIn: 'root'
+<<<<<<< HEAD
 })
+=======
+}
+)
+>>>>>>> 25f351cf77b915fa2f4b1c9006ed6b8e52c6e205
 export class AuthService {
 
     constructor(private httpClient: HttpClient) { }

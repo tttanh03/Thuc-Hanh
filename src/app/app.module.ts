@@ -6,9 +6,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { LayoutModule } from './layout/layout.module';
 import { AppRoutingModule } from './app.routing';
 
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
+    
+
   ],
   imports: [
     BrowserModule,
@@ -16,7 +21,9 @@ import { AppRoutingModule } from './app.routing';
     ReactiveFormsModule,
     HttpClientModule,
     LayoutModule,
-    AppRoutingModule
+    AppRoutingModule,
+    
+    
   ],
   providers: [
     

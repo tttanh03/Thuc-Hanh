@@ -1,0 +1,17 @@
+<div class="summary-container">
+  <div class="left">
+    <img src="assets/order.png" alt="">
+    <span class="total"> {{ totalAmount }}</span>
+    <img class="arrow-up" (click)="showPopup = !showPopup" src="assets/arrow-up.png" alt="">
+  </div>
+  <button>
+    Order Now
+  </button>
+  <div class="popup" *ngIf="showPopup">
+    <ul>
+      <li *ngFor="let item of orderFoods">
+        {{item.name }}: {{item.price }} x {{item.orderNumber}}
+      </li>
+    </ul>
+  </div>
+</div>
