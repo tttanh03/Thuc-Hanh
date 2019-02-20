@@ -9,18 +9,6 @@ const routes: Routes = [
         path: '',
         component: ProfileComponent,
         children: [
-<<<<<<< HEAD
-            {
-                path: 'info',
-                component: InfoComponent
-            },
-            {
-                path: 'schedule',
-                component: ScheduleComponent
-            }
-        ]
-    }
-=======
           {
             path: 'info',
             component: InfoComponent
@@ -31,7 +19,6 @@ const routes: Routes = [
           }
         ]
       }
->>>>>>> 25f351cf77b915fa2f4b1c9006ed6b8e52c6e205
 ]
 
 @NgModule({

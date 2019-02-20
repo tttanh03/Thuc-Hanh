@@ -4,10 +4,6 @@ import { LayoutComponent } from './layout/layout.component';
 import { PageNotFoundComponent } from './layout/page-not-found/page-not-found.component';
 import { LoginGuard } from './services/login-guard.service';
 import { AuthGuard } from './services/auth-guard.service';
-<<<<<<< HEAD
-=======
-
->>>>>>> 25f351cf77b915fa2f4b1c9006ed6b8e52c6e205
 
 const routes: Routes = [
   {
