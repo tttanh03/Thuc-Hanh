@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Observer, BehaviorSubject, pipe } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { IFood } from '../interfaces/IFood';
+import { IFood } from 'src/app/interfaces/IFood';
+
 
 @Injectable({providedIn: 'root'})
 export class MenuService {

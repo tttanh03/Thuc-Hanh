@@ -1,6 +1,6 @@
 import {Component, OnDestroy, Input} from '@angular/core'
-import { IFood } from '../interfaces/IFood';
 import { OrderService } from '../services/order.service';
+import { IFood } from 'src/app/interfaces/IFood';
 
 @Component ({
     selector: 'app-order-food',

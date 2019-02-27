@@ -1,5 +1,7 @@
-import {Component, OnDestroy, Input} from '@angular/core'
-import { IFood } from '../interfaces/IFood';
+import {Component, OnDestroy, Input} from '@angular/core';
+import { IFood } from 'src/app/interfaces/IFood';
+
+
 
 @Component ({
     selector: 'app-food',

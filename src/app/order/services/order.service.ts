@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { IFood } from '../interfaces/IFood';
+import { IFood } from 'src/app/interfaces/IFood';
+
 
 @Injectable()
 export class OrderService {

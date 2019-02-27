@@ -1,8 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MenuService } from '../services/menu.service';
-import { IFood } from '../interfaces/IFood';
+
 import { Observable } from 'rxjs';
 import { ActivatedRoute} from '@angular/router';
+import { IFood } from 'src/app/interfaces/IFood';
 
 @Component({
   selector: 'app-menu',

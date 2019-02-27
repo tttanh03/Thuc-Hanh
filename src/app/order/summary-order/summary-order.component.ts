@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderService } from '../services/order.service';
-import { IFood } from '../interfaces/IFood';
+import { IFood } from 'src/app/interfaces/IFood';
+
 
 @Component({
   selector: 'app-summary-order',

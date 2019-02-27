@@ -1,17 +1,22 @@
 <div class="summary-container">
   <div class="left">
     <img src="assets/order.png" alt="">
-    <span class="total"> {{ totalAmount }}</span>
+    <span class="total"> {{ totalAmount }} vnd</span>
     <img class="arrow-up" (click)="showPopup = !showPopup" src="assets/arrow-up.png" alt="">
   </div>
   <button>
     Order Now
   </button>
   <div class="popup" *ngIf="showPopup">
+    <h5>Your Order</h5>
     <ul>
       <li *ngFor="let item of orderFoods">
-        {{item.name }}: {{item.price }} x {{item.orderNumber}}
+        <span class="name">{{item.name }}</span>  <span class="price">{{item.orderNumber}} x {{item.price }} vnd </span>
       </li>
     </ul>
+    <input type="text" placeholder="Note Something">
+  </div>
+  <div class="background" *ngIf="showPopup">
+    
   </div>
 </div>

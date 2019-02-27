@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuService } from '../page/menu/services/menu.service';
 import { ActivatedRoute } from '@angular/router';
-import { IFood } from './interfaces/IFood';
+import { IFood } from '../interfaces/IFood';
+
 
 @Component({
   selector: 'app-order',

@@ -1,41 +1,98 @@
 :host {
+  display: flex;
+  width: 100vw;
+  height: 60px;
+  background-color: #422912;
+  position: sticky;
+  bottom: 0;
+
+  .summary-container {
     display: flex;
-    width: 100vw;
-    height: 60px;
-    background-color: #422912;
-    .summary-container {
-        display: flex;
-        justify-content: space-between;
-        flex: 1;
-        position: relative;
-        .popup {
-            position: absolute;
-            bottom: 60px;
-            z-index: 100;
-            width: 100%;
-            min-height: 200px;
-            background-color: #C8B496;
+    justify-content: space-between;
+    flex: 1;
+    position: relative;
+
+    .popup {
+      position: absolute;
+      bottom: 60px;
+      z-index: 100;
+      width: 100%;
+      min-height: 200px;
+      background-color: white;
+
+      h5 {
+        margin-bottom: none;
+        margin: 20px 0 20px 30px;
+
+
+      }
+
+      ul {
+        padding-left: none;
+        padding: 0 30px;
+
+        li {
+          list-style: none;
+          font-size: 15px;
+          margin: 5px 0;
+
+          .name {
+            float: left;
+            padding-right: 3.5rem;
+
+          }
+
+          .price {
+            float: right;
+          }
         }
-        .left {
-            display: flex;
-            align-items: center;
-            color: white;
-            flex: 1;
-            img {
-                margin-left: 1.5rem;
-            }
-            span {
-                margin-left: 1rem;
-            }
-            .arrow-up {
-                height: 32px;
-                margin-left: 5rem;
-            }
-        }
-        button {
-            border: none;
-            background-color: #C8B496;
-            color: white;
-        }
+      }
+
+      input {
+        margin: 30px;
+        width: 85%;
+        height: 4rem;
+        border-radius: 0.5rem;
+        border: gray 0.5px solid;
+        padding: 5px;
+      }
     }
+
+    .background {
+      background-color: rgba(0, 0, 0, 0.459);
+      position: absolute;
+      height: 1000px;
+      z-index: 99;
+      width: 100%;
+      bottom: 60px;
+      
+
+    }
+
+    .left {
+      display: flex;
+      align-items: center;
+      color: white;
+      flex: 1;
+
+      img {
+        margin-left: 1.5rem;
+      }
+
+      span {
+        margin-left: 1rem;
+      }
+
+      .arrow-up {
+        height: 32px;
+        margin-left: 5rem;
+      }
+    }
+
+    button {
+      border: none;
+      background-color: #C8B496;
+      color: white;
+    }
+  }
 }
