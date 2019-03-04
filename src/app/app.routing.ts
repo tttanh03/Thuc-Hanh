@@ -4,6 +4,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { PageNotFoundComponent } from './layout/page-not-found/page-not-found.component';
 import { LoginGuard } from './services/login-guard.service';
 import { AuthGuard } from './services/auth-guard.service';
+import { OrderDetailComponent } from './order-detail/order-detail.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: 'order',
     loadChildren: './order/order.module#OrderModule'
+  },
+  {
+    path: 'vieworder',
+    component: OrderDetailComponent
   },
   {
     path: '**',

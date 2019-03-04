@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LayoutModule } from './layout/layout.module';
 import { AppRoutingModule } from './app.routing';
+import { OrderDetailComponent } from './order-detail/order-detail.component';
 
 
 
@@ -12,6 +13,7 @@ import { AppRoutingModule } from './app.routing';
 @NgModule({
   declarations: [
     AppComponent,
+    OrderDetailComponent,
     
 
   ],
