@@ -16,7 +16,7 @@ export class TableComponent implements OnDestroy, OnInit{
 ngOnInit() {}
     order() {
         //this.tableStatus = 1;
-        //this.router.navigate(['tables/order'])
+        this.router.navigate(['/order'])
     }
 
     preparing() {

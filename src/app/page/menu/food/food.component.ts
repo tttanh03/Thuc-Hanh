@@ -1,5 +1,6 @@
 import {Component, OnDestroy, Input} from '@angular/core';
 import { IFood } from 'src/app/interfaces/IFood';
+import { Router } from '@angular/router';
 
 
 
@@ -20,7 +21,11 @@ export class FoodComponent implements OnDestroy{
             name:''
         }]
     }
-   
+   constructor (private router: Router) {}
+
+    detail() {
+    this.router.navigate(['menu/detail'])
+   }
    
     
     ngOnDestroy (){
