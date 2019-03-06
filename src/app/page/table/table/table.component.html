@@ -8,7 +8,7 @@
         </div>
     </div>
     <div class="body">
-        <button (click)="order()">
+        <button (click)="order(table.id)">
             Order
         </button>
     </div>
@@ -26,7 +26,7 @@
     <div>
         {{table.totalOrder}} Orders
     </div>
-        <button (click)="preparing()">
+        <button (click)="preparing(table.billId)">
             Preparing
         </button>
     </div>
@@ -44,7 +44,7 @@
         <div>
             {{table.totalOrder}} Orders
         </div>
-        <button class="ready" (click)="ready()">
+        <button class="ready" (click)="order(table.id)">
             Ready
         </button>
     </div>
@@ -62,7 +62,7 @@
         <div>
             {{table.totalOrder}} Orders
         </div>
-        <button class="served" (click)="serviced()">
+        <button class="served" (click)="order(table.id)">
             Serviced
         </button>
     </div>

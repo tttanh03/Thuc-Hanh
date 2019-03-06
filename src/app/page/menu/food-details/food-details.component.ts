@@ -10,19 +10,28 @@ import { IFood } from 'src/app/interfaces/IFood';
   styleUrls: ['./food-details.component.scss']
 })
 export class FoodDetailsComponent implements OnInit {
+  foods: Array<IFood> =[];
   @Input() food: IFood = {
     id: '',
-        name: 'Coffee',
-        cover: 'https://tucsonfoodie.com/wp-content/uploads/2018/09/pexels-photo-302899-600x400.jpeg',
-        categories: [{
-            id:'',
-            name:''
-        }]}
-  constructor(private route: ActivatedRoute, private foodService: MenuService) { }
+    name: 'Coffee',
+    cover: '',
+    categories: [{
+      id: '',
+      name: ''
+    }]
+  }
+  constructor(private route: ActivatedRoute,
+    private menuSvc: MenuService,
+    ) { }
 
   ngOnInit() {
-    const id = this.route.snapshot.params.id
-    //this.foodService.getFood(id).subscribe.
-  }
+    this.menuSvc.foods.subscribe((newData) => {
+      this.foods = newData;
+    });
+    const id = this.route.snapshot.params.foodId;
+    this.menuSvc.getFood(id).subscribe(data => {
+      this.food = data;
+  });
 
+}
 }

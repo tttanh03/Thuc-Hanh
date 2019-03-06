@@ -18,11 +18,11 @@ export class LayoutComponent implements OnInit {
     alert(this.title);
   }
   
-  addTable() {
-    this.tables.push({
-      tableName: 'New Table',
-      tableStatus: 0
-    })
-  }
+  // addTable() {
+  //   this.tables.push({
+  //     tableName: 'New Table',
+  //     tableStatus: 0
+  //   })
+  // }
   
 }

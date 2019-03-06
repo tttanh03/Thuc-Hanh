@@ -13,6 +13,9 @@ import { IFood } from 'src/app/interfaces/IFood';
 export class MenuComponent implements OnInit {
   foods: Array<IFood> = [];
   
+  
+
+  
   constructor(private menuSvc: MenuService,private route: ActivatedRoute) {
   }
   ngOnInit() {
@@ -22,9 +25,16 @@ export class MenuComponent implements OnInit {
     this.menuSvc.getMenus()
   }
     tapOnFood (foods: IFood) {
-   this.menuSvc.setCurrentFood(foods.name);
+   this.menuSvc.setCurrentFood(foods.name);}
 
-    }
+   filterCoffee () {}
+//    const result = this.foods.filter (x => {
+//     return x.categories ? x.categories.name === "5be552923679acff6545fd51" : false
+//   })
+//   console.log(result);
+// }
+
+    
     // this.menuSvc.foods.subscribe((newFoods) => {
     //   this.foods= newFoods;
 

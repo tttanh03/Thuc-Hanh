@@ -11,21 +11,20 @@ body {
   background-color: #422912;
   color: white;
   font-size: 18px;
-  align-items: baseline;
 
   h4 {
     text-transform: uppercase;
     font-size: 18px;
     font-weight: bold;
     letter-spacing: 3px;
-    margin-bottom:0;
+    margin-bottom: 0;
   }
 
   p {
     font-size: 13px;
     text-transform: capitalize;
-    margin-bottom: 0!important;
-    margin-block-end: 0!important;
+    margin-bottom: 0 !important;
+    margin-block-end: 0 !important;
   }
 
   img {
@@ -38,7 +37,7 @@ body {
   padding: 0.5rem;
 
   .status {
-    display:flex;
+    display: flex;
     justify-content: space-between;
     flex-wrap: nowrap;
     align-items: baseline;
@@ -52,17 +51,26 @@ body {
       background-color: yellow;
       color: #422912;
       padding: 0.7rem 3rem;
-      font-size:14px;
+      font-size: 14px;
 
     }
+  }
+
+  app-ordered-food {
+    position: absolute;
+    top: 110px;
+    bottom: 20%;
+    overflow: auto;
+
   }
 }
 
 .bottom {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   text-align: center;
+  height: 20%;
 
   button {
     border-radius: 2rem;

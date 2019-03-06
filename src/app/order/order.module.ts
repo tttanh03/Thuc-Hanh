@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-
 import { OrderComponent } from './order.component';
 import { OrderRoutingModule } from './order.routing';
 import { SharedModule } from 'src/shared/shared.module';

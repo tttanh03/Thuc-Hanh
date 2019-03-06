@@ -23,7 +23,7 @@ export class MenuService {
 
 
     getMenus() {
-        const url = `https://lexuanquynh.com/foods?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViZTU0ZjRiMzY3OWFjZmY2NTQ1ZmQ0OSIsImlhdCI6MTU0MTc1NTA5OH0.KvtTL9T6AMeSw6r33aqOOBo9yb0iKDE2-1qhVW4lLpo`
+        const url = `foods`
         this.httpClient.get(url).pipe(map((response: any) => {
             const data = response.rows.map(x => {
 
@@ -65,6 +65,24 @@ export class MenuService {
         this._currentMenu.next(name);
     }
     getFood(id: string) {
+        return this.httpClient.get('menu/' + id).pipe(
+            map((res:any) => {
+              let food:IFood ={
+
+                id: res.id,
+                name: res.name,
+                price: res.price,
+                cover: res.pictures ? res.pictures[0] : '',
+                categories: res.categories ? res.categories.map(i => {
+                    return {
+                        id: i.id,
+                        name: i.name
+                    }
+                }) : []
+            }
+              return food;
+            })
+          )
 
     }
 

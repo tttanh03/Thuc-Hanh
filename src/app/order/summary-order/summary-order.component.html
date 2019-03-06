@@ -4,7 +4,7 @@
     <span class="total"> {{ totalAmount }} vnd</span>
     <img class="arrow-up" (click)="showPopup = !showPopup" src="assets/arrow-up.png" alt="">
   </div>
-  <button>
+  <button (click)="orderfood(table.id)">
     Order Now
   </button>
   <div class="popup" *ngIf="showPopup">
@@ -14,7 +14,7 @@
         <span class="name">{{item.name }}</span>  <span class="price">{{item.orderNumber}} x {{item.price }} vnd </span>
       </li>
     </ul>
-    <input type="text" placeholder="Note Something">
+    <input type="text" placeholder="Note Something" [(ngModel)]="note">
   </div>
   <div class="background" *ngIf="showPopup">
     

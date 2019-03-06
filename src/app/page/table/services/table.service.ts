@@ -23,22 +23,20 @@ export class TableService {
   }
 
   addTable() {
-    // this.tables.push({
-    //   tableName: 'New Table',
-    //   tableStatus: 0
-    // })
   }
 
   getTables() {
-    const url = `http://lexuanquynh.com:8080/tables?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViZTU0ZmEwMzY3OWFjZmY2NTQ1ZmQ0YSIsImlhdCI6MTU0MTc1NDc4NH0.kpj_nqM8aiT7OpjTmheRfYE8IRY0z4xSE-CP7GGWbHM`
+    const url = `tables`
     this.httpClient.get(url).pipe(
       map((response: any) => {
         const data = response.map(x => {
           let table: ITable = {
+            id: x.id,
             tableName: x.name,
-            customerName: x.bill ? x.bill.customer : undefined,
-            tableStatus: x.bill ? x.bill.status : 0,
-            totalOrder: x.bill ? x.bill.details.length : undefined
+            customerName: x.customerName,
+            tableStatus: x.status,
+            totalOrder: x.numberOrder,
+            billId: x.billId
           }
           return table;
         })
@@ -58,5 +56,20 @@ export class TableService {
   }
   setCurrentTable(tableName: String) {
     this._currentTable.next(tableName);
+  }
+  getTable(id:String) {
+    return this.httpClient.get('tables/' + id).pipe(
+      map((res:any) => {
+        let table:ITable ={
+          id:res.id,
+          tableName: res.name,
+          customerName: res.customerName,
+          tableStatus: res.status,
+          totalOrder: res.numberOrder,
+          billId: res.billId,
+        }
+        return table;
+      })
+    )
   }
 }

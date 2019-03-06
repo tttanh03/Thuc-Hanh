@@ -9,7 +9,7 @@ const routes: Routes = [
         component: MenuComponent,
         children: [
           {
-            path: 'detail',
+            path: ':foodId',
             component: FoodDetailsComponent
           }
         ]

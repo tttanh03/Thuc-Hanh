@@ -1,7 +1,7 @@
 <div class="header">
-  <img src="assets/left-arrow.png" alt="">
-  <h4>Table 01</h4>
-  <p>Edit</p>
+  <img (click)='goBack()' src="assets/left-arrow.png" alt="">
+  <h4>{{table.tableName}}</h4>
+  <p (click)='editOrder(table.id)'>Edit</p>
 
 </div>
 
@@ -10,11 +10,11 @@
     <h5>Orders</h5>
     <h4>Serve</h4>
   </div>
-
+  <app-ordered-food *ngFor="let food of orderFoods" [food]="food"> </app-ordered-food>
 </div>
 
 <div class="bottom">
 
-  <button class="more">More Orders</button>
+  <button class="more" (click)='goTables()'>More Orders</button>
   <button class="done">Done</button>
 </div>

@@ -9,26 +9,18 @@ import { Router } from '@angular/router';
 }) 
 export class TableComponent implements OnDestroy, OnInit{ 
     @Input() table: ITable= {
+        id:'',
         tableName: 'Table',
         tableStatus: 0
     }
     constructor(private router: Router) {}
 ngOnInit() {}
-    order() {
-        //this.tableStatus = 1;
-        this.router.navigate(['/order'])
+    order(id) {
+        this.router.navigate(['order',id])
     }
-
-    preparing() {
-       //this.tableStatus = 2; 
+    preparing(id) {
+        this.router.navigate(['vieworder',id])
     }
-    ready() {
-        //this.tableStatus = 3; 
-     }
-     
-    serviced() {
-        //this.tableStatus = 0; 
-     }
     ngOnDestroy() {
         console.log('Component Table have been destroyed');
     }
