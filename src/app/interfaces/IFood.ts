@@ -3,7 +3,7 @@ export interface IFood {
   name: String;
   price?: number;
   cover: String;
-	categories: [{
+	categories?: [{
   	id: String;
     name: String;
   }]

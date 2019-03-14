@@ -1,0 +1,69 @@
+<div class="table" *ngIf='table.tableStatus === 0'>
+  <div class="header">
+      <div>
+          {{table.tableName | uppercase}}
+      </div>
+      <div class="status">
+          {{table.tableStatus | status}}
+      </div>
+  </div>
+  <div class="body">
+      <button (click)="order(table.id)">
+          Order
+      </button>
+  </div>
+</div>
+<div class="table table-on-serve" *ngIf='table.tableStatus === 1' >
+  <div class="header header-on-serve">
+      <div>
+          {{table.tableName | uppercase}}
+      </div>
+      <div class="customer-name-on-serve">
+          {{table.customerName}}
+      </div>
+  </div>
+  <div class="body-on-serve">
+  <div>
+      {{table.totalOrder}} Orders
+  </div>
+      <button (click)="openBill(table.billId)">
+          Preparing
+      </button>
+  </div>
+</div>
+<div class="table table-on-serve" *ngIf='table.tableStatus === 2' >
+  <div class="header header-on-serve">
+      <div>
+          {{table.tableName | uppercase}}
+      </div>
+      <div class="customer-name-on-serve">
+          {{table.customerName}}
+      </div>
+  </div>
+  <div class="body-on-serve">
+      <div>
+          {{table.totalOrder}} Orders
+      </div>
+      <button class="ready" (click)="openBill(table.billId)">
+          Ready
+      </button>
+  </div>
+</div>
+<div class="table table-on-serve" *ngIf='table.tableStatus === 3' >
+  <div class="header header-on-serve">
+      <div>
+          {{table.tableName | uppercase}}
+      </div>
+      <div class="customer-name-on-serve">
+          {{table.customerName}}
+      </div>
+  </div>
+  <div class="body-on-serve">
+      <div>
+          {{table.totalOrder}} Orders
+      </div>
+      <button class="served" (click)="openBill(table.billId)">
+          Serviced
+      </button>
+  </div>
+</div>

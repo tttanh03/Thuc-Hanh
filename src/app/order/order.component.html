@@ -16,5 +16,5 @@
     <button> <img src="../assets/category-4.png">Special</button>
     
 </div>
-<app-order-food *ngFor="let food of foods" [food]="food"> </app-order-food>
+<app-order-food *ngFor="let food of foods" [food]="food" [orderNumber]="food.orderNumber"> </app-order-food>
 <app-summary-order (onOrder)="order()"></app-summary-order>

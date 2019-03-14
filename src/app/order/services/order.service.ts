@@ -54,6 +54,7 @@ export class OrderService {
         foods.forEach(f => {
             total = total + (f.price * f.orderNumber)
         })
+        this._orderFoods.next(foods);
         this._totalAmount.next(total);
     }
     createBill(tableId: String, customerName: String, orderFoods: IFood[]) {
@@ -64,7 +65,21 @@ export class OrderService {
             details: orderFoods.map(f => {
                 return {
                     id: f.id,
-                    quality: f.orderNumber
+                    quatity: f.orderNumber
+                }
+            })
+        })
+    }
+
+    updateBill(billId: String, tableId: String, customerName: String, orderFoods: IFood[], status: Number = 1) {
+        return this.httpClient.put(`bills/${billId}`, {
+            table: tableId,
+            customer: customerName,
+            status: status,
+            details: orderFoods.map(f => {
+                return {
+                    id: f.id,
+                    quatity: f.orderNumber
                 }
             })
         })

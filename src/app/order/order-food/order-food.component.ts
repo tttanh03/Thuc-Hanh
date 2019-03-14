@@ -11,7 +11,7 @@ import { IFood } from 'src/app/interfaces/IFood';
 export class OrderFoodComponent implements OnDestroy{
     @Input() food: IFood = {
         id: '',
-        name: 'Coffee',
+        name: 'coffee',
         price: 1,
         cover: '',
         categories: [{
@@ -19,7 +19,7 @@ export class OrderFoodComponent implements OnDestroy{
             name:''
         }]
     }
-    orderNumber: number = 0;
+    @Input() orderNumber: number = 0;
     
     constructor( private orderSerivce: OrderService) {
     }

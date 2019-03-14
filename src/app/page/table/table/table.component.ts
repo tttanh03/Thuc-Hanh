@@ -18,7 +18,7 @@ ngOnInit() {}
     order(id) {
         this.router.navigate(['order',id])
     }
-    preparing(id) {
+    openBill(id) {
         this.router.navigate(['vieworder',id])
     }
     ngOnDestroy() {

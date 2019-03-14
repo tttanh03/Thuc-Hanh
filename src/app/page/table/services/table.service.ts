@@ -3,7 +3,7 @@ import { ITable } from '../interfaces/ITable';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Observer, BehaviorSubject, pipe } from 'rxjs';
 import { map } from 'rxjs/operators';
-
+import { environment } from 'src/environments/environment.prod';
 @Injectable(
   {providedIn: 'root'}
 )
@@ -51,8 +51,6 @@ export class TableService {
         console.log('completed');
       }
       )
-
-    // this.tables = data;
   }
   setCurrentTable(tableName: String) {
     this._currentTable.next(tableName);

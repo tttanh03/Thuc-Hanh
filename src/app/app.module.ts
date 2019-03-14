@@ -6,6 +6,9 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LayoutModule } from './layout/layout.module';
 import { AppRoutingModule } from './app.routing';
 import { HeaderInterceptor } from './services/http.interceptor';
+import { BartenderTableComponent } from './bartender-table/bartender-table.component';
+import { BartenderFoodComponent } from './bartender-table/bartender-food/bartender-food.component';
+import { BartenderFoodInfoComponent } from './bartender-table/bartender-food-info/bartender-food-info.component';
 
 
 
@@ -13,6 +16,9 @@ import { HeaderInterceptor } from './services/http.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
+    BartenderTableComponent,
+    BartenderFoodComponent,
+    BartenderFoodInfoComponent,
 
     
 

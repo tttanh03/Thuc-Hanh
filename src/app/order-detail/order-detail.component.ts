@@ -6,6 +6,7 @@ import { MenuService } from '../page/menu/services/menu.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TableService } from '../page/table/services/table.service';
 import { ITable } from '../page/table/interfaces/ITable';
+import { BillService } from '../order/services/bill.service';
 
 
 @Component({
@@ -14,32 +15,22 @@ import { ITable } from '../page/table/interfaces/ITable';
   styleUrls: ['./order-detail.component.scss']
 })
 export class OrderDetailComponent implements OnInit {
-  
-  foods: Array<IFood> = [];
   orderFoods: Array<IFood> =[];
   table: ITable;
 
   constructor(private orderService: OrderService,
     private location: Location,
-    private menuSvc: MenuService,
-    private route: ActivatedRoute,
-    private tableSvc: TableService,
-    private router: Router
+    private billService: BillService,
+    private router: Router,
+    private route: ActivatedRoute
     ){ }
 
   ngOnInit() {
-    this.menuSvc.foods.subscribe((newData) => {
-      this.foods = newData;
-    });
-    const id = this.route.snapshot.params.tableId;
-    this.tableSvc.getTable(id).subscribe(data => {
-      this.table = data;
+    const id = this.route.snapshot.params.billId
+    this.billService.getBill(id).subscribe(data => {
+      this.orderFoods = data.details as any;
+      this.table = data.table;
     })
-    this.menuSvc.getMenus()
-    this.orderService.orderFoods.subscribe(data => {
-      this.orderFoods = data;
-    })
-
   }
   goBack() {
     this.location.back();
@@ -48,7 +39,15 @@ export class OrderDetailComponent implements OnInit {
     this.router.navigate(['tables'])
   }
   editOrder(id) {
-    this.router.navigate(['order',id])
+    const billId = this.route.snapshot.params.billId
+    this.router.navigate([`order/${id}`, {billId: billId}])
+  }
+
+  done() {
+    const id = this.route.snapshot.params.billId
+    this.orderService.updateBill(id, this.table.id, this.table.customerName, this.orderFoods, 4).subscribe(data => {
+      this.router.navigate(['/tables']);
+    });
   }
 
 }

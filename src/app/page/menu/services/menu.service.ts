@@ -28,7 +28,7 @@ export class MenuService {
             const data = response.rows.map(x => {
 
                 let food: IFood = {
-
+                    orderNumber: 0,
                     id: x.id,
                     name: x.name,
                     price: x.price,

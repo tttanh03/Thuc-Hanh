@@ -40,6 +40,6 @@ export class SummaryOrderComponent implements OnInit {
   orderfood(id) {
     //this.tableStatus = 1;
     this.onOrder.emit();
-    this.router.navigate(['vieworder', id])
+    
   }
 }

@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { OrderDetailComponent } from './order-detail.component';
+import { BartenderTableComponent } from './bartender-table.component';
 
 
 const routes: Routes = [
     {
-        path: ':billId',
-        component: OrderDetailComponent
+        path: '',
+        component: BartenderTableComponent,
+        children: [
+            
+        ]
       }
 ]
 
@@ -15,4 +18,4 @@ const routes: Routes = [
     exports: [],
     declarations: [],
 })
-export class OrderDetailRoutingModule { }
+export class TableRoutingModule { }

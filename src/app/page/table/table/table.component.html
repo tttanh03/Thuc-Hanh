@@ -26,7 +26,7 @@
     <div>
         {{table.totalOrder}} Orders
     </div>
-        <button (click)="preparing(table.billId)">
+        <button (click)="openBill(table.billId)">
             Preparing
         </button>
     </div>
@@ -44,7 +44,7 @@
         <div>
             {{table.totalOrder}} Orders
         </div>
-        <button class="ready" (click)="order(table.id)">
+        <button class="ready" (click)="openBill(table.billId)">
             Ready
         </button>
     </div>
@@ -62,7 +62,7 @@
         <div>
             {{table.totalOrder}} Orders
         </div>
-        <button class="served" (click)="order(table.id)">
+        <button class="served" (click)="openBill(table.billId)">
             Serviced
         </button>
     </div>
