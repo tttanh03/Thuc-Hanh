@@ -1,20 +1,22 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from 'src/shared/shared.module';
-import { TableComponent } from './table/table.component';
-import { ListTableComponent } from './list-table/list-table.component';
-import { TableService } from './services/table.service';
-import { StatusPipe } from './pipes/status.pipe';
-import { TableRoutingModule } from './table.routing';
+import { TableService } from '../page/table/services/table.service';
+import { StatusPipe } from '../page/table/pipes/status.pipe';
+import { TableComponent } from '../page/table/table/table.component';
+import { BartenderTableRoutingModule } from './bartender-table.routing';
+import { BartenderFoodComponent } from './bartender-food/bartender-food.component';
+
+
 
 @NgModule({
     imports: [
         SharedModule,
-        TableRoutingModule
+        BartenderTableRoutingModule
     ],
     exports: [],
     declarations: [
         TableComponent,
-        ListTableComponent,
+        BartenderFoodComponent,
         StatusPipe
 
     ],

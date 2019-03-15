@@ -18,4 +18,4 @@ const routes: Routes = [
     exports: [],
     declarations: [],
 })
-export class TableRoutingModule { }
+export class BartenderTableRoutingModule { }

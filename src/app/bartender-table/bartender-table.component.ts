@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ITable } from '../page/table/interfaces/ITable';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { TableService } from '../page/table/services/table.service';
 
 @Component({
   selector: 'app-bartender-table',
@@ -9,19 +10,20 @@ import { Router } from '@angular/router';
 })
 export class BartenderTableComponent implements OnInit {
 
-  @Input() table: ITable= {
-    id:'',
-    tableName: 'Table',
-    tableStatus: 0
-}
-constructor(private router: Router) {}
-ngOnInit() {}
+  tables: Array<ITable> = [];
+  @Input() 
+  constructor(private tableSvc: TableService, private route: ActivatedRoute) {
+  }
+  ngOnInit() {
+    this.tableSvc.tables.subscribe((newData) => {
+      this.tables = newData;
 
-openBill(id) {
-    this.router.navigate(['vieworder',id])
-}
-ngOnDestroy() {
-    console.log('Component Table have been destroyed');
-}
-}
+    });
+    this.tableSvc.getTables()
 
+    tapOnTable(table:ITable) {
+      this.tableSvc.setCurrentTable(table.tableName);
+
+    }
+
+  }
