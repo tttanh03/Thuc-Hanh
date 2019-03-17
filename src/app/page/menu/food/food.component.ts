@@ -2,8 +2,6 @@ import {Component, OnDestroy, Input} from '@angular/core';
 import { IFood } from 'src/app/interfaces/IFood';
 import { Router, ActivatedRoute } from '@angular/router';
 
-
-
 @Component ({
     selector: 'app-food',
     templateUrl: './food.component.html',
@@ -24,9 +22,8 @@ export class FoodComponent implements OnDestroy{
    constructor (private router: Router) {}
 
     detail(id) {
-    this.router.navigate(['menu', id])
-   }
-   
+    this.router.navigate(['details', id])
+   } 
     
     ngOnDestroy (){
         console.log ('Component has been destroyed')

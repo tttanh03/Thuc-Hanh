@@ -4,6 +4,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 import { InfoComponent } from './info/info.component';
 import { ProfileRoutingModule } from './profile.routing';
+import { UserService } from './service/user.service';
 
 
 
@@ -20,6 +21,6 @@ import { ProfileRoutingModule } from './profile.routing';
         InfoComponent
 
     ],
-    providers: [],
+    providers: [UserService],
 })
 export class ProfileModule { }

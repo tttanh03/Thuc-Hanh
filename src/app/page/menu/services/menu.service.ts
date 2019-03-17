@@ -25,7 +25,7 @@ export class MenuService {
     getMenus() {
         const url = `foods`
         this.httpClient.get(url).pipe(map((response: any) => {
-            const data = response.rows.map(x => {
+            let data = response.rows.map(x => {
 
                 let food: IFood = {
                     orderNumber: 0,
@@ -44,6 +44,7 @@ export class MenuService {
 
 
             })
+            // data = data.filter(x => x.price === 29000)
             return data;
 
         }))

@@ -2,9 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IFood } from '../interfaces/IFood';
 import { OrderService } from '../order/services/order.service';
 import { Location } from '@angular/common';
-import { MenuService } from '../page/menu/services/menu.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { TableService } from '../page/table/services/table.service';
 import { ITable } from '../page/table/interfaces/ITable';
 import { BillService } from '../order/services/bill.service';
 

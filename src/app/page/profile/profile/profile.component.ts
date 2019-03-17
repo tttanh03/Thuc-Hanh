@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IProfile } from '../interfaces/IProfile';
+import { IUser } from '../interface/IUser';
+import { UserService } from '../service/user.service';
+import { Route, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -8,17 +10,21 @@ import { IProfile } from '../interfaces/IProfile';
 })
 export class ProfileComponent implements OnInit {
   @Input() selectedItem = 'info';
-  profile: IProfile = {
+  user: IUser = {
     id: '',
     name: 'Lê Xuân Quỳnh',
     picture: '../../assets/lxquynh.jpeg',
-    position: 'Nhân viên bán hàng',
+    role: 'Nhân viên bán hàng',
     email: '',
-    phone: '',
+    
   }
-  constructor() { }
+  constructor(private userSvc: UserService,
+    private route: ActivatedRoute)
+   { }
 
   ngOnInit() {
+    const id = this.route.snapshot.params.userId
+    this.userSvc.getUser(id)
 
   }
 

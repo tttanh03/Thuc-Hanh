@@ -1,8 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MenuService } from '../services/menu.service';
 import { IFood } from 'src/app/interfaces/IFood';
-
+import { MenuService } from '../page/menu/services/menu.service';
 
 @Component({
   selector: 'app-food-details',
@@ -20,18 +19,18 @@ export class FoodDetailsComponent implements OnInit {
       name: ''
     }]
   }
-  constructor(private route: ActivatedRoute,
+  constructor(
+    private route: ActivatedRoute,
     private menuSvc: MenuService,
-    ) { }
+  ) { }
 
   ngOnInit() {
-    this.menuSvc.foods.subscribe((newData) => {
-      this.foods = newData;
-    });
     const id = this.route.snapshot.params.foodId;
     this.menuSvc.getFood(id).subscribe(data => {
-      this.food = data;
-  });
+      this.foods = data as any;
+    });
 
-}
+
+
+  }
 }

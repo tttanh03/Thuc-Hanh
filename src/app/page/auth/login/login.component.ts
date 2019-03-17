@@ -40,16 +40,5 @@ export class LoginComponent implements OnInit {
             alert('Sai email hoac password');
           })
     } 
-    // if(this.email && this.password) {
-    //   console.log(this.email)
-    //   console.log(this.password)
 
-    //   this.authSvc.login(this.email, this.password).subscribe(res => {
-    //     console.log(res);
-    //     this.router.navigate(['/tables'])
-    //   }, (err) => {
-    //     alert('Sai email hoac password');
-    //   })
-    //   // 
-    // }
   }}

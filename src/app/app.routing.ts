@@ -44,6 +44,10 @@ const routes: Routes = [
     loadChildren: './order-detail/order-detail.module#OrderDetailModule'
   },
   {
+    path: 'details',
+    loadChildren: './food-details/food-details.module#FoodDetailsModule'
+  },
+  {
     path: '**',
     component: PageNotFoundComponent
   }

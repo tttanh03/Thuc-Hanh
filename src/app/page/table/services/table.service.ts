@@ -43,7 +43,7 @@ export class TableService {
         return data;
       }))
       .subscribe((data: any[]) => {
-        this._tables.next(this.filterTableByRole(data))
+        this._tables.next(data)
 
       }, (error) => {
         console.log(error)
@@ -53,13 +53,13 @@ export class TableService {
       )
   }
 
-  filterTableByRole(tables: ITable[]) {
-    let role: Roles;
-    switch(role) {
-      case Roles.User: return tables.filter(x => x.tableStatus === TableStatus.Available);
-      default: return tables;
-    }    
-  }
+  // filterTableByRole(tables: ITable[]) {
+  //   let role: Roles;
+  //   switch(role) {
+  //     case Roles.User: return tables.filter(x => x.tableStatus === TableStatus.Available);
+  //     default: return tables;
+  //   }    
+  // }
   setCurrentTable(tableName: String) {
     this._currentTable.next(tableName);
   }
@@ -80,13 +80,13 @@ export class TableService {
   }
 }
 
-enum Roles {
-  User,
-  Admin, 
-  Bartender
-}
-enum TableStatus {
-  Available,
-  Order
+// enum Roles {
+//   User,
+//   Admin, 
+//   Bartender
+// }
+// enum TableStatus {
+//   Available,
+//   Order
 
-}
+// }
