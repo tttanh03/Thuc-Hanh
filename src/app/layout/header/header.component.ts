@@ -1,5 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { TableService } from 'src/app/page/table/services/table.service';
+import { IMenu } from '../interfaces/IMenu';
 
 @Component({
   selector: 'app-header',

@@ -1,9 +1,9 @@
 <div>
     <div class="categories-buttons"> 
-        <button (click)='filterCoffee(foods)'> <img src="../assets/category-1.png">Cả phê</button>
-        <button> <img src="../assets/category-2.png">Trà</button>
-        <button> <img src="../assets/category-3.png">Espresso</button>
-        <button> <img src="../assets/category-4.png">Freeze</button>
+        <button (click)='filterCoffee(1)'> <img src="../assets/category-1.png">Cả phê</button>
+        <button (click)='filterCoffee(2)'> <img src="../assets/category-2.png">Trà</button>
+        <button (click)='filterCoffee(3)'> <img src="../assets/category-3.png">Espresso</button>
+        <button (click)='filterCoffee(4)'> <img src="../assets/category-4.png">Freeze</button>
     </div>
   <app-food *ngFor="let food of foods" [food]="food" (click)="tapOnFood(food)"> </app-food>
   

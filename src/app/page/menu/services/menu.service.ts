@@ -66,7 +66,7 @@ export class MenuService {
         this._currentMenu.next(name);
     }
     getFood(id: string) {
-        return this.httpClient.get('menu/' + id).pipe(
+        return this.httpClient.get('foods/' + id).pipe(
             map((res:any) => {
               let food:IFood ={
 

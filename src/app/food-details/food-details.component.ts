@@ -9,10 +9,10 @@ import { MenuService } from '../page/menu/services/menu.service';
   styleUrls: ['./food-details.component.scss']
 })
 export class FoodDetailsComponent implements OnInit {
-  foods: Array<IFood> =[];
+
   @Input() food: IFood = {
     id: '',
-    name: 'Coffee',
+    name: '',
     cover: '',
     categories: [{
       id: '',
@@ -27,7 +27,8 @@ export class FoodDetailsComponent implements OnInit {
   ngOnInit() {
     const id = this.route.snapshot.params.foodId;
     this.menuSvc.getFood(id).subscribe(data => {
-      this.foods = data as any;
+      console.log(data);
+      this.food = data;
     });
 
 
