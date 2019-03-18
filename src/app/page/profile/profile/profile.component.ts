@@ -9,6 +9,8 @@ import { Route, ActivatedRoute } from '@angular/router';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
+  // currentUser: IUser;
+  // users: IUser[] = []
   @Input() selectedItem = 'info';
   user: IUser = {
     id: '',
@@ -19,12 +21,15 @@ export class ProfileComponent implements OnInit {
     
   }
   constructor(private userSvc: UserService,
-    private route: ActivatedRoute)
-   { }
+    private route: ActivatedRoute) {}
+  //  { this.currentUser = JSON.parse(sessionStorage.getItem('token'))}
 
   ngOnInit() {
     const id = this.route.snapshot.params.userId
-    this.userSvc.getUser(id)
+    this.userSvc.getCurrentUser(id).subscribe(data => {
+      console.log(data);
+      this.user = data;
+    })
 
   }
 

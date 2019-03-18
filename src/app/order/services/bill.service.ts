@@ -29,7 +29,7 @@ export class BillService {
                     const x : IFood = {
                         id: f.foodId,
                         name: f.foodName,
-                        cover: 'https://www.highlandscoffee.com.vn/vnt_upload/product/03_2018/TRATHACHVAI.png',
+                        cover: f.pictures ? res.pictures[0] : '',
                         price: f.price,
                         orderNumber: f.quatity,
                     }

@@ -21,36 +21,11 @@ export class UserService {
 
     constructor(private httpClient: HttpClient) {
     }
-    getUser(id: String) {
-        const url = `users`
-        this.httpClient.get(url).pipe(map((response: any) => {
-            let data = response.rows.map(x => {
+    
 
-                let user: IUser = {
-                    id: x.id,
-                    name: x.name,
-                    picture: x.pictures,
-                    role: x.role,
-                    email:x.email
-                }
-                return user;
-            })
-            return data;
-
-        }))
-
-            .subscribe((data: any[]) => {
-                this._user.next(data);
-            }, (error) => {
-                console.log(error)
-            }, () => {
-                console.log('completed');
-
-            })
-        }
 getCurrentUser (id: String) {
             return this.httpClient.get(`users/${id}`).pipe(map((res: any) => {
-            let user: IUser = {
+            const user: IUser = {
                 id: res.id,
                 name: res.name,
                 picture: res.pictures,
@@ -58,22 +33,12 @@ getCurrentUser (id: String) {
                 email: res.email
 
             }
+            console.log(user)
             return user;
 
         }))
+
 }
-        // return this.httpClient.get(`users/${id}`).pipe(map((res: any) => {
-        //     let user: IUser = {
-        //         id: res.id,
-        //         name: res.name,
-        //         picture: res.pictures,
-        //         role: res.role,
-        //         email: res.email
-
-        //     }
-        //     return user;
-
-        // }))
 
 
     }

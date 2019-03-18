@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IFood } from 'src/app/interfaces/IFood';
 import { MenuService } from '../page/menu/services/menu.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-food-details',
@@ -22,6 +23,7 @@ export class FoodDetailsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private menuSvc: MenuService,
+    private location: Location
   ) { }
 
   ngOnInit() {
@@ -31,7 +33,8 @@ export class FoodDetailsComponent implements OnInit {
       this.food = data;
     });
 
-
-
+  }
+  goBack() {
+    this.location.back();
   }
 }

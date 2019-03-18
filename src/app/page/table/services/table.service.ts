@@ -4,13 +4,15 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, Observer, BehaviorSubject, pipe } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment.prod';
+import { IUser } from '../../profile/interface/IUser';
+import { UserService } from '../../profile/service/user.service';
 @Injectable(
   {providedIn: 'root'}
 )
 export class TableService {
   private _tables: BehaviorSubject<ITable[]> = new BehaviorSubject([]);
   private _currentTable: BehaviorSubject<String> = new BehaviorSubject<String>('');
-
+private _user: IUser;
   get currentTable() {
     return this._currentTable.asObservable();
 
@@ -19,7 +21,8 @@ export class TableService {
     return this._tables.asObservable();
   }
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private httpClient: HttpClient,
+    private userSvc: UserService) {
   }
 
   addTable() {
@@ -29,7 +32,7 @@ export class TableService {
     const url = `tables`
     this.httpClient.get(url).pipe(
       map((response: any) => {
-        const data = response.map(x => {
+        let data = response.map(x => {
           let table: ITable = {
             id: x.id,
             tableName: x.name,

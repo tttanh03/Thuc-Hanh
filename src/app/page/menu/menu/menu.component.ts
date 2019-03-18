@@ -32,14 +32,6 @@ export class MenuComponent implements OnInit {
   }
 
 
-  // filterCoffee(foods) {
-  //   this.foods = this.foods.filter(x =>
-  //     x.categories ? x.categories[0].id === '5be552923679acff6545fd51' : false
-  //   )
-
-  // }
-
-
   filterCoffee(index) {
     this.foods = this.OriginFoods;
     switch (index) {

@@ -30,7 +30,10 @@ export class InfoComponent implements OnInit {
 
   ngOnInit() {
     const id = this.route.snapshot.params.userId
-    this.userSvc.getUser(id)
-  }
+    this.userSvc.getCurrentUser(id).subscribe(data => {
+      console.log(data);
+      this.user = data;
+    })
 
+}
 }
