@@ -11,7 +11,12 @@ const routes: Routes = [
         children: [
           {
             path: 'info',
+            children : [
+              {
+                path: '**',
             component: InfoComponent
+              }
+            ]
           },
           {
             path: 'schedule',

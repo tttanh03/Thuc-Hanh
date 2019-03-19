@@ -6,13 +6,14 @@ import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment.prod';
 import { IUser } from '../../profile/interface/IUser';
 import { UserService } from '../../profile/service/user.service';
+import { ActivatedRoute } from '@angular/router';
 @Injectable(
-  {providedIn: 'root'}
+  { providedIn: 'root' }
 )
 export class TableService {
   private _tables: BehaviorSubject<ITable[]> = new BehaviorSubject([]);
   private _currentTable: BehaviorSubject<String> = new BehaviorSubject<String>('');
-private _user: IUser;
+
   get currentTable() {
     return this._currentTable.asObservable();
 
@@ -22,7 +23,8 @@ private _user: IUser;
   }
 
   constructor(private httpClient: HttpClient,
-    private userSvc: UserService) {
+    private userSvc: UserService,
+    private route: ActivatedRoute) {
   }
 
   addTable() {
@@ -33,7 +35,7 @@ private _user: IUser;
     this.httpClient.get(url).pipe(
       map((response: any) => {
         let data = response.map(x => {
-          let table: ITable = {
+          const table: ITable = {
             id: x.id,
             tableName: x.name,
             customerName: x.customerName,
@@ -43,9 +45,18 @@ private _user: IUser;
           }
           return table;
         })
-        return data;
-      }))
+      //   const id = this.route.snapshot.params.userId
+      //   this.userSvc.getCurrentUser(id).subscribe(res => {
+      //   if (res.role === "bartender") {
+      //     const data = data.filter (x =>
+      //       x.tableStatus === 1)
+      //       return data
+      //   } 
+      // })
+      return data;
+    }))
       .subscribe((data: any[]) => {
+        
         this._tables.next(data)
 
       }, (error) => {
@@ -56,21 +67,14 @@ private _user: IUser;
       )
   }
 
-  // filterTableByRole(tables: ITable[]) {
-  //   let role: Roles;
-  //   switch(role) {
-  //     case Roles.User: return tables.filter(x => x.tableStatus === TableStatus.Available);
-  //     default: return tables;
-  //   }    
-  // }
   setCurrentTable(tableName: String) {
     this._currentTable.next(tableName);
   }
-  getTable(id:String) {
+  getTable(id: String) {
     return this.httpClient.get('tables/' + id).pipe(
-      map((res:any) => {
-        let table:ITable ={
-          id:res.id,
+      map((res: any) => {
+        let table: ITable = {
+          id: res.id,
           tableName: res.name,
           customerName: res.customerName,
           tableStatus: res.status,
@@ -83,13 +87,3 @@ private _user: IUser;
   }
 }
 
-// enum Roles {
-//   User,
-//   Admin, 
-//   Bartender
-// }
-// enum TableStatus {
-//   Available,
-//   Order
-
-// }

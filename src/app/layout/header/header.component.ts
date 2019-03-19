@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { TableService } from 'src/app/page/table/services/table.service';
 import { IMenu } from '../interfaces/IMenu';
 
@@ -8,10 +8,12 @@ import { IMenu } from '../interfaces/IMenu';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  @Input () name : string;
   title: String = 'MENU';
 
 
   @Output() onAdd: EventEmitter<Boolean> = new EventEmitter()
+
 
   constructor(private tableSvc: TableService) {
 

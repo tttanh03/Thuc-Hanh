@@ -11,7 +11,7 @@
   </div>
   <div class="body">
     <div class="container" [ngClass]="{'grid': displayMode === 0, 'list': displayMode === 1}">
-      <app-table *ngFor="let table of tables" [table]="table"></app-table>
+      <app-table *ngFor="let table of filledTable" [table]="table"></app-table>
     </div>
 
   </div>

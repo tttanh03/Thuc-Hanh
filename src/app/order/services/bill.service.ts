@@ -29,7 +29,7 @@ export class BillService {
                     const x : IFood = {
                         id: f.foodId,
                         name: f.foodName,
-                        cover: f.pictures ? res.pictures[0] : '',
+                        cover: f.pictures,
                         price: f.price,
                         orderNumber: f.quatity,
                     }
